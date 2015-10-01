@@ -1,0 +1,30 @@
+{
+  "variables": {
+    "aws_access_key": "{{env `AWS_ACCESS_KEY`}}",
+    "aws_secret_key": "{{env `AWS_SECRET_KEY`}}"
+  },
+  "builders": [{
+    "type": "amazon-ebs",
+    "access_key": "{{user `aws_access_key`}}",
+    "secret_key": "{{user `aws_secret_key`}}",
+    "region": "us-west-1",
+    "source_ami": "ami-bb1cdbff",
+    "instance_type": "t2.micro",
+    "ssh_username": "ubuntu",
+    "ami_name": "tomcat-deploy {{timestamp}}",
+    "tags": {
+        "type": "springapp"
+    }
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "inline": [
+      "cd /app",
+      "git clone git@bitbucket.org:moondev/spring.git",
+      "cd spring",
+      "git checkout builds",
+      "cd target",
+      "sudo cp mavenapp-1.0-SNAPSHOT.war /var/lib/tomcat7/webapps/ROOT.war"
+    ]
+  }]
+}
