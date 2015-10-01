@@ -1,3 +1,7 @@
-git rebase -s theirs builds master
 git checkout builds
-./build
+git merge -s ours master
+./build.sh
+git add .
+git add -u
+git commit -m 'build'
+git push origin builds
