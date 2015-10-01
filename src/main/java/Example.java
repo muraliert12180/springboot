@@ -11,7 +11,7 @@ public class Example {
     @RequestMapping("/")
     String home() {
 
-        return runCmd("../deploy/ec2-metadata -i");
+        return runCmd("../deploy/ec2-metadata -i -e");
     }
 
     public static void main(String[] args) throws Exception {
