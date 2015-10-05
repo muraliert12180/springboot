@@ -3,6 +3,7 @@
 git checkout builds
 git merge -s ours master -m 'build merge'
 ./build.sh
+rm -rf target
 git add .
 git add -u
 git commit -m 'build'
