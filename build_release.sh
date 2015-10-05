@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
 git checkout builds
-git merge -s ours master -m 'build merge'
+rm -rf deploy
+git checkout master -- deploy
+git checkout master -- src
+git checkout master -- pom.xml
+git checkout master -- build.sh
 ./build.sh
 rm -rf target
 git add .
