@@ -1,3 +1,4 @@
+#!/usr/bin/env bas
 git checkout builds
 git merge -s ours master -m 'build merge'
 ./build.sh
