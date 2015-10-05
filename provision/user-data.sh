@@ -1,1 +1,2 @@
-/app/spring/deploy/launch.sh
+#!/bin/bash
+java -jar /app/spring/deploy/service.jar &
