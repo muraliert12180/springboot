@@ -11,7 +11,7 @@
     "source_ami": "ami-bb1cdbff",
     "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
-    "ami_name": "tomcat-deploy {{timestamp}}",
+    "ami_name": "springboot-deploy {{timestamp}}",
     "tags": {
         "type": "springapp"
     }
@@ -20,11 +20,9 @@
     "type": "shell",
     "inline": [
       "cd /app",
-      "false",
+      "git clone git@bitbucket.org:moondev/spring.git",
       "cd spring",
-      "git checkout builds",
-      "cd target",
-      "sudo cp mavenapp-1.0-SNAPSHOT.war /var/lib/tomcat7/webapps/ROOT.war"
+      "./build.sh"
     ]
   }]
 }
