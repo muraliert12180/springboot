@@ -20,7 +20,7 @@
     "type": "shell",
     "inline": [
       "cd /app",
-      "git clone git@bitbucket.org:moondev/spring.git",
+      "false",
       "cd spring",
       "git checkout builds",
       "cd target",
