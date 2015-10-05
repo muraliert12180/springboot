@@ -2,7 +2,6 @@
 
 rm -rf target
 rm deploy/service.jar
-rm -rf deploy/classes
 mvn dependency:tree
 mvn clean install
 mvn package
