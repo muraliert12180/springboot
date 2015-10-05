@@ -7,6 +7,7 @@ images = os.popen("aws ec2 describe-images --filters Name=tag-key,Values=type Na
 images = json.loads(images)
 ami = images[0]['ID']
 
+
 #launch instance
 #instance = os.popen("aws ec2 run-instances --image-id " + ami + " --count 1 --instance-type t2.micro --key-name cmoon --security-groups 'wide open'").read()
 #print instance
@@ -24,7 +25,7 @@ ami = images[0]['ID']
 
 #create launch configuration
 launchconfig = "launch" + ami
-print os.popen("aws autoscaling create-launch-configuration --launch-configuration-name " + launchconfig + " --user-data user-data.sh --key-name cmoon --image-id " + ami + " --instance-type t2.micro --security-groups 'wide open'").read()
+print os.popen("aws autoscaling create-launch-configuration --launch-configuration-name " + launchconfig + " --user-data file://user-data.sh --key-name cmoon --image-id " + ami + " --instance-type t2.micro --security-groups sg-1dbaff78").read()
 
 
 #create asg

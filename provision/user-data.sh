@@ -1,1 +1,1 @@
-cd /app/spring/deploy/launch.sh
+/app/spring/deploy/launch.sh
