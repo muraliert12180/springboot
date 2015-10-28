@@ -11,7 +11,7 @@ public class Example {
     @RequestMapping("/")
     String home() {
 
-        return "<h2>NEW CODE</h2>" + runCmd("./ec2-metadata -i");
+        return "<h2>HELLO</h2>" + runCmd("./ec2-metadata -i");
     }
 
     public static void main(String[] args) throws Exception {
