@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -ex
 
 rm -rf target
 rm deploy/service.jar
